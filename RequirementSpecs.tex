@@ -11,6 +11,12 @@
 \newlist{ConstraintEnum}{enumerate}{1}
 \setlist[ConstraintEnum]{label=C-\arabic*:}
 
+\newlist{AssumptionsEnum}{enumerate}{1}
+\setlist[AssumptionsEnum]{label=A-\arabic*:}
+
+\newlist{DependenciesEnum}{enumerate}{1}
+\setlist[DependenciesEnum]{label=D-\arabic*:}
+
 \begin{document}
 
 \input{./coverpage.tex}
@@ -100,7 +106,12 @@ Notification will make use of the device operating system to provide push notifi
 			\item NavUP should be able to detect the location of the user to such an extent that it can detect a user in different rooms in a building.
 		\end{ConstraintEnum}
 	\subsection{Assumptions and Dependencies}
-	
+		\begin{AssumptionsEnum}
+			\item The user will be assumed to have a basic amount of technological literacy in operating their smart device and new apps.
+		\end{AssumptionsEnum}
+		\begin{DependenciesEnum}
+			\item The user will have their smart device connected to the campus Wi-Fi.
+		\end{DependenciesEnum}
 \section{Specific Requirements}
 	\subsection{External Interface Requirements}
 	\subsection{Functional Requirements}
