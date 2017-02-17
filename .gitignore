@@ -20,3 +20,4 @@ _book
 *.lof
 *.out.ps
 *.toc
+*.synctex.gz
