@@ -21,3 +21,4 @@ _book
 *.out.ps
 *.toc
 *.synctex.gz
+*.db

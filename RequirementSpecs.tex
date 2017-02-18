@@ -5,6 +5,7 @@
 \usepackage{bookmark}
 \usepackage{hyperref}
 \usepackage{enumitem}
+\usepackage{float}
 
 \setlength{\parindent}{0em}
 
@@ -16,6 +17,8 @@
 
 \newlist{DependenciesEnum}{enumerate}{1}
 \setlist[DependenciesEnum]{label=D-\arabic*:}
+
+\graphicspath{/CaseDiagrams}
 
 \begin{document}
 
@@ -137,6 +140,11 @@ Notification will make use of the device operating system to provide push notifi
 			\end{itemize}
 		\subsubsection{CA2: Search for Location}
 		\subsubsection{CA3: View Location Detail}
+		\textbf{Core-Navigation Sub-System Case Diagram:}
+		\begin{figure}
+			\includegraphics[width=\linewidth]{CoreNavigation.png}
+			\caption{Fig1: Core-Navigation Sub-System Case Diagram:}
+		\end{figure}
 	\subsection{Navigation Management Sub-System}
 		\subsubsection{CA4: Review Location}
 		\subsubsection{CA5: Contribute a picture}
