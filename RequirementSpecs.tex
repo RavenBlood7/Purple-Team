@@ -91,13 +91,13 @@ Notification will make use of the device operating system to provide push notifi
 	\subsection{User Characteristics}
 	\subsection{Constraints}
 		\begin{ConstraintEnum}
-			\item NavUP will have accomodate system with lesser hardware capabilities.
-			\item NavUP should not affect the Bandwidth usage of the University’s WiFi routers.
+			\item NavUP will have accommodate system with lesser hardware capabilities.
+			\item NavUP should not affect the Bandwidth usage of the University's Wi-Fi routers.
 			\item NavUP will only be functional inside the bounds of the University of Pretoria Hatfield Campus.
 			\item NavUP interface should provide accessibility improvement for those with disabilities.
 			\item Routes that are being calculated should always be the most optimal route.
 			\item NavUP should be designed by making use of non-proprietary software and technologies.
-			\item NavUP must be able to operate on the campus WiFi alone if mobile data or GPS functionality is not available.
+			\item NavUP must be able to operate on the campus Wi-Fi alone if mobile data or GPS functionality is not available.
 			\item User interface must maximise the features the user is able to access but be minimalistic in design so that the user is not overwhelmed by a complex interface.
 			\item NavUP should be able to adapt to different devices with different hardware component and sizes.
 			\item NavUP should be functional on Android and IOS.
@@ -107,7 +107,7 @@ Notification will make use of the device operating system to provide push notifi
 		\end{ConstraintEnum}
 	\subsection{Assumptions and Dependencies}
 		\begin{AssumptionsEnum}
-			\item The user will be assumed to have a basic amount of technological literacy in operating their smart device and new apps.
+			\item The user will be assumed to have a basic amount of technological literacy in operating their smart device and new applications.
 		\end{AssumptionsEnum}
 		\begin{DependenciesEnum}
 			\item The user will have their smart device connected to the campus Wi-Fi.
@@ -119,5 +119,53 @@ Notification will make use of the device operating system to provide push notifi
 	\subsection{Design Constraints}
 	\subsection{Software System Attributes}
 	\subsection{Other Requirements}
-
+\section{Functional Requirements}
+	\subsection{Core Navigation Sub-System}
+		\subsubsection{CA1: Get Current Location}
+			\begin{itemize}
+				\item The system must be aware of the user location at all times for the system to be able to navigate correctly. The user should have the option to view the current location that the system is using. Functionality can only be provided to registered users.
+				\item Pre-Conditions
+					\begin{itemize}
+						\item Users device must have an active GPS, Wi-fi or mobile data. connection
+						\item User must be registered.
+						\item User must be logged in.
+					\end{itemize}
+				\item Post-Condition
+					\begin{itemize}
+						\item The device current location is returned.
+					\end{itemize}
+			\end{itemize}
+		\subsubsection{CA2: Search for Location}
+		\subsubsection{CA3: View Location Detail}
+	\subsection{Navigation Management Sub-System}
+		\subsubsection{CA4: Review Location}
+		\subsubsection{CA5: Contribute a picture}
+		\subsubsection{CA6: Save Event Location}
+		\subsubsection{CA7: View Places of Interest near me}
+	\subsection{User Activity Sub-System}
+		\subsubsection{CA8: View Saved Location}
+		\subsubsection{CA9: Save My Location}
+		\subsubsection{CA10: View History}
+		\subsubsection{CA11: Share Location with friend}
+		\subsubsection{CA12: Find Friend}
+	\subsection{Crowdsourcing Sub-System}
+		\subsubsection{CA13: Report a Problem}
+	\subsection{Game Sub-System}
+		\subsubsection{CA14: Treasure Hunt}
+		\subsubsection{CA15: Wearable Tracking}
+	\subsection{Administration Sub-System}
+		\subsubsection{CA16: Manage User}
+		\subsubsection{CA17: Manage Location}
+		\subsubsection{CA18: Manage Events}
+		\subsubsection{CA19: Add Notification}
+	\subsection{Announcement Sub-System}
+		\subsubsection{CA20: Push Notification}
+		\subsubsection{CA21: Post General Announcement}
+	\subsection{Account Management Sub-System}
+		\subsubsection{CA22: Create Profile}
+		\subsubsection{CA23: Delete Profile}
+		\subsubsection{CA24: Login}
+		\subsubsection{CA25: Manage Profile}
+	\subsection{Traceability Matrix}
+	\subsection{Actor-System interaction modelling}
 \end{document}
