@@ -5,6 +5,7 @@
 \usepackage{bookmark}
 \usepackage{hyperref}
 \usepackage{enumitem}
+\usepackage{float}
 
 \setlength{\parindent}{0em}
 
@@ -16,6 +17,8 @@
 
 \newlist{DependenciesEnum}{enumerate}{1}
 \setlist[DependenciesEnum]{label=D-\arabic*:}
+
+\graphicspath{{CaseDiagrams/}}
 
 \begin{document}
 
@@ -91,13 +94,13 @@ Notification will make use of the device operating system to provide push notifi
 	\subsection{User Characteristics}
 	\subsection{Constraints}
 		\begin{ConstraintEnum}
-			\item NavUP will have accomodate system with lesser hardware capabilities.
-			\item NavUP should not affect the Bandwidth usage of the University’s WiFi routers.
+			\item NavUP will have accommodate system with lesser hardware capabilities.
+			\item NavUP should not affect the Bandwidth usage of the University's Wi-Fi routers.
 			\item NavUP will only be functional inside the bounds of the University of Pretoria Hatfield Campus.
 			\item NavUP interface should provide accessibility improvement for those with disabilities.
 			\item Routes that are being calculated should always be the most optimal route.
 			\item NavUP should be designed by making use of non-proprietary software and technologies.
-			\item NavUP must be able to operate on the campus WiFi alone if mobile data or GPS functionality is not available.
+			\item NavUP must be able to operate on the campus Wi-Fi alone if mobile data or GPS functionality is not available.
 			\item User interface must maximise the features the user is able to access but be minimalistic in design so that the user is not overwhelmed by a complex interface.
 			\item NavUP should be able to adapt to different devices with different hardware component and sizes.
 			\item NavUP should be functional on Android and IOS.
@@ -107,7 +110,7 @@ Notification will make use of the device operating system to provide push notifi
 		\end{ConstraintEnum}
 	\subsection{Assumptions and Dependencies}
 		\begin{AssumptionsEnum}
-			\item The user will be assumed to have a basic amount of technological literacy in operating their smart device and new apps.
+			\item The user will be assumed to have a basic amount of technological literacy in operating their smart device and new applications.
 		\end{AssumptionsEnum}
 		\begin{DependenciesEnum}
 			\item The user will have their smart device connected to the campus Wi-Fi.
@@ -119,5 +122,373 @@ Notification will make use of the device operating system to provide push notifi
 	\subsection{Design Constraints}
 	\subsection{Software System Attributes}
 	\subsection{Other Requirements}
-
+\section{Functional Requirements}
+	\subsection{Core Navigation Sub-System}
+		\subsubsection{CA1: Get Current Location}
+			\begin{itemize}
+				\item The system must be aware of the user location at all times for the system to be able to navigate correctly. The user should have the option to view the current location that the system is using. Functionality can only be provided to registered users.
+				\item Pre-Conditions
+					\begin{itemize}
+						\item Users device must have an active GPS, Wi-fi or mobile data. connection
+						\item User must be registered.
+						\item User must be logged in.
+					\end{itemize}
+				\item Post-Condition
+					\begin{itemize}
+						\item The device current location is returned.
+					\end{itemize}
+			\end{itemize}
+		\subsubsection{CA2: Search for Location}
+			\begin{itemize}
+				\item The user should be able to search for any location on campus. Further option about the location should be provided if the search was successful.
+				\item Pre-Conditions
+					\begin{itemize}
+						\item User must be registered.
+						\item User must be logged in.
+					\end{itemize}
+				\item Post-Condition
+					\begin{itemize}
+						\item Search Location Returned.
+						\item Suggested Location Returned.
+						\item More option become available.
+					\end{itemize}
+			\end{itemize}
+		\subsubsection{CA3: View Location Detail}
+			\begin{itemize}
+				\item The user should be able to lookup location details of his/her current location or searched location
+				\item Pre-Conditions
+					\begin{itemize}
+						\item User must be registered.
+						\item User must be logged in.
+						\item User must have a selected location.
+					\end{itemize}
+				\item Post-Condition
+					\begin{itemize}
+						\item Returns Details about location.
+					\end{itemize}
+				\item \textbf{Core-Navigation Sub-System Case Diagram:}
+					\begin{figure}[H]
+						\includegraphics[width=\linewidth]{CaseDiagrams/CoreNavigation.png}
+						\caption{Core-Navigation Sub-System Case Diagram:}
+					\end{figure}
+			\end{itemize}
+	\subsection{Navigation Management Sub-System}
+		\subsubsection{CA4: Review Location}
+			\begin{itemize}
+				\item This Function allow the user to review a location
+				\item Pre-Condition
+					\begin{itemize}
+						\item User must be registered.
+						\item User must be logged in.
+						\item User must have a selected location.
+					\end{itemize}
+				\item Post-Condition
+					\begin{itemize}
+						\item User review will successfully be added to location information.
+					\end{itemize}
+			\end{itemize}
+		\subsubsection{CA5: Contribute a picture}
+			\begin{itemize}
+				\item This function allows user to contribute a picture for a location in order to improve a location information.
+				\item Pre-Condition
+					\begin{itemize}
+						\item User must be registered.
+						\item User must be logged in.
+						\item User must have a selected location.
+						\item Must have a valid photo format to upload
+					\end{itemize}
+				\item Post-Condition
+					\begin{itemize}
+						\item User photo will be successfully added to location information.
+					\end{itemize}
+			\end{itemize}
+		\subsubsection{CA6: Save Event Location}
+			\begin{itemize}
+				\item User with the right level of permission will be allowed to create a event for a specific location. Only Admin will be allowed to invoke this permission and will be allowed to revoke this permission as well.
+				\item Pre-Condition
+					\begin{itemize}
+						\item User must be registered.
+						\item User must be logged in.
+						\item User must have a selected location.
+						\item Must have valid permission level.
+					\end{itemize}
+				\item Post-Condition
+					\begin{itemize}
+						\item Event Created at location
+					\end{itemize}
+			\end{itemize}
+		\subsubsection{CA7: View Places of Interest near me}
+			\begin{itemize}
+				\item Allow the user to view other places near the user current location.
+				\item Pre-Condition
+					\begin{itemize}
+						\item User must be registered.
+						\item User must be logged in.
+						\item User must be at a valid location
+					\end{itemize}
+				\item Post-Condition
+					\begin{itemize}
+						\item A list of location near the user current location
+					\end{itemize}
+			\end{itemize}
+	\subsection{User Activity Sub-System}
+		\subsubsection{CA8: View Saved Location}
+			\begin{itemize}
+				\item Allow the user to view his/her saved location.
+				\item Pre-Condition
+					\begin{itemize}
+						\item User must be registered.
+						\item User must be logged in.
+						\item Must have at least one saved location
+					\end{itemize}
+				\item Post-Condition
+					\begin{itemize}
+						\item Returns a list of saved locations.
+					\end{itemize}
+			\end{itemize}
+		\subsubsection{CA9: Save My Location}
+			\begin{itemize}
+				\item Allow the user to save current location or selected location that has been searched for.
+				\item Pre-Condition
+					\begin{itemize}
+						\item User must be registered.
+						\item User must be logged in.
+						\item Must select a valid location.
+					\end{itemize}
+				\item Post-Condition
+					\begin{itemize}
+						\item Save location to user personal profile.
+					\end{itemize}
+			\end{itemize}
+		\subsubsection{CA10: View History}
+			\begin{itemize}
+				\item Allow the user to view search history as well as this history of location visited and events attended.
+				\item Pre-Condition
+					\begin{itemize}
+						\item User must be registered.
+						\item User must be logged in.
+					\end{itemize}
+				\item Post-Condition
+					\begin{itemize}
+						\item A details activity history of the user
+					\end{itemize}
+			\end{itemize}
+		\subsubsection{CA11: Share Location with friend}
+			\begin{itemize}
+				\item Allow the user to share his/her current location with a friend who is on the user contact list and also has NavUp installed on their device.
+				\item Pre-Condition
+					\begin{itemize}
+						\item User must be registered.
+						\item User must be logged in.
+						\item User must have a valid location.
+						\item User must send location to friend that on user contact list.
+						\item Recipient must have NavUP installed on their device.
+					\end{itemize}
+				\item Post-Condition
+					\begin{itemize}
+						\item Location is send to friend.
+					\end{itemize}
+			\end{itemize}
+		\subsubsection{CA12: Find Friend}
+			\begin{itemize}
+				\item User will be able to navigate to a friend if a friend has send his/her location.
+				\item Pre-Condition
+					\begin{itemize}
+						\item User must be registered.
+						\item User must be logged in.
+						\item Valid Location must be sent from friend.
+					\end{itemize}
+				\item Post-Condition
+					\begin{itemize}
+						\item Optimise navigation route to get to friend.
+					\end{itemize}
+			\end{itemize}
+	\subsection{Crowdsourcing Sub-System}
+		\subsubsection{CA13: Report a Problem}
+			\begin{itemize}
+				\item User has the ability to report a problem on any of the routes or building on campus.
+				\item Pre-Condition
+					\begin{itemize}
+						\item User must be registered.
+						\item User must be logged in.
+					\end{itemize}
+				\item Post-Condition
+					\begin{itemize}
+						\item Problem is reported to the system.
+					\end{itemize}
+			\end{itemize}
+	\subsection{Game Sub-System}
+		\subsubsection{CA14: Treasure Hunt}
+			\begin{itemize}
+				\item Game functionality will be built in that will allow user to challenge friends in treasure hunts.
+				\item Pre-Condition
+					\begin{itemize}
+						\item User must be registered.
+						\item User must be logged in.
+					\end{itemize}
+				\item Post-Condition
+					\begin{itemize}
+						\item A treasure hunt game will be created on screen and will make use of NavUp navigation functionality.
+					\end{itemize}
+			\end{itemize}
+		\subsubsection{CA15: Wearable Tracking}
+			\begin{itemize}
+				\item The user will be able to sync data from smart we arables to NavUp to improve game play experience.
+				\item Pre-Condition
+					\begin{itemize}
+						\item User must be registered.
+						\item User must be logged in.
+						\item A wearable that is compatible with NavUP.
+					\end{itemize}
+				\item Post-Condition
+					\begin{itemize}
+						\item Step count from wearable added to user profile.
+						\item Distance  by user added to user profile.
+						\item User average speed added to user profile.
+					\end{itemize}
+			\end{itemize}
+	\subsection{Administration Sub-System}
+		\subsubsection{CA16: Manage User}
+			\begin{itemize}
+				\item User with Admin privileges will be allowed to manage user privileges for event creation. User management will also include banning or suspension of accounts that abuse the NavUP system.
+				\item Pre-Condition
+					\begin{itemize}
+						\item User must be registered.
+						\item User must be logged in.
+						\item Must have admin privileges.
+					\end{itemize}
+				\item Post-Condition
+					\begin{itemize}
+						\item Change user privileges
+						\item Suspend User
+					\end{itemize}
+			\end{itemize}
+		\subsubsection{CA17: Manage Location}
+			\begin{itemize}
+				\item User with Admin privileges will be able to edit location or add new location to the NavUP map.
+				\item Pre-Condition
+					\begin{itemize}
+						\item User must be registered.
+						\item User must be logged in.
+						\item Must have admin privileges.
+						\item Must have a valid NavUP location when editing.
+					\end{itemize}
+				\item Post-Condition
+					\begin{itemize}
+						\item Add Location.
+						\item Delete Location.
+						\item Change Location Detail.
+					\end{itemize}
+			\end{itemize}
+		\subsubsection{CA18: Manage Events}
+			\begin{itemize}
+				\item User with Admin or Creator Privileges will be able to create and edit Events bound to location on the UP campus.
+				\item Pre-Condition
+					\begin{itemize}
+						\item User must be registered.
+						\item User must be logged in.
+						\item Must have admin privileges or Creator privileges.
+						\item Event must be a valid NavUP location.
+					\end{itemize}
+				\item Post-Condition
+					\begin{itemize}
+						\item Event added to NavUP system.
+						\item Event removed on the NavUP system.
+						\item Event edited on NavUP system.
+					\end{itemize}
+			\end{itemize}
+		\subsubsection{CA19: Add Notification}
+			\begin{itemize}
+				\item User with Admin Privileges will have the ability to send push notification to all NavUP users.
+					\item Pre-Condition
+						\begin{itemize}
+							\item User must be registered.
+							\item User must be logged in.
+							\item Must have admin privileges privileges.
+						\end{itemize}
+					\item Post-Condition
+						\begin{itemize}
+							\item Notification is sent to all NavUP users.
+						\end{itemize}
+			\end{itemize}
+	\subsection{Announcement Sub-System}
+		\subsubsection{CA20: Push Notification}
+			\begin{itemize}
+				\item All NavUP will receive a push notification.
+					\item Pre-Condition
+						\begin{itemize}
+							\item User must be registered.
+							\item User must be logged in.
+						\end{itemize}
+					\item Post-Condition
+						\begin{itemize}
+							\item Push Notification sent.
+						\end{itemize}
+			\end{itemize}
+		\subsubsection{CA21: Post General Announcement}
+			\begin{itemize}
+				\item The function has similar functionality than that of notification however, general announcement will not be push notification but rather viewable on announcement board.
+					\item Pre-Condition
+						\begin{itemize}
+							\item User must be registered.
+							\item User must be logged in.
+						\end{itemize}
+					\item Post-Condition
+						\begin{itemize}
+							\item General Announcement on announcement board.
+						\end{itemize}
+			\end{itemize}
+	\subsection{Account Management Sub-System}
+		\subsubsection{CA22: Create Profile}
+			\begin{itemize}
+				\item Allow the user to create a profile so that the user can use NavUp.
+					\item Pre-Condition
+						\begin{itemize}
+							\item Must Provide valid registration information.
+						\end{itemize}
+					\item Post-Condition
+						\begin{itemize}
+							\item New User Profile created.
+						\end{itemize}
+			\end{itemize}
+		\subsubsection{CA23: Delete Profile}
+			\begin{itemize}
+				\item The User has the ability to delete his/her account.
+					\item Pre-Condition
+						\begin{itemize}
+							\item User must be registered.
+							\item User must be logged in.
+						\end{itemize}
+					\item Post-Condition
+						\begin{itemize}
+							\item Account is removed from the NavUp systems.
+						\end{itemize}
+			\end{itemize}
+		\subsubsection{CA24: Login}
+			\begin{itemize}
+				\item Any user with an already existing NavUP account must be able to login.
+					\item Pre-Condition
+						\begin{itemize}
+							\item User must be registered.
+						\end{itemize}
+					\item Post-Condition
+						\begin{itemize}
+							\item User is logged in.
+						\end{itemize}
+			\end{itemize}
+		\subsubsection{CA25: Manage Profile}
+			\begin{itemize}
+				\item The user is capable of managing his/her profile.
+					\item Pre-Condition
+						\begin{itemize}
+							\item User must be registered.
+							\item User must be logged in.
+						\end{itemize}
+					\item Post-Condition
+						\begin{itemize}
+							\item Update User Details.
+						\end{itemize}
+			\end{itemize}
+	\subsection{Traceability Matrix}
+	\subsection{Actor-System interaction modelling}
 \end{document}
