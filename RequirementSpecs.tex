@@ -64,7 +64,7 @@ NavUP main function will be to provide navigation to the user on the Hatfield Ca
 NavUP provides other functions with the intent of informing the user of all that the Campus can offer, NavUP will provide functionality to the user which will allow the user to view detailed information about the location the user is currently at or any location the user searched for. Furthermore, the user will be able to save frequent or favourite location to easily navigate to frequented locations
 NavUP also focuses on entertainment and social side of the University of Pretoria by allowing the user to discover or create events that may occur at the many locations on Hatfield Campus.\newline
 
-Crowdsourcing will play a pivotal role in the NavUP application user will be able to review buildings, restaurants or other services on Hatfield campuses, furthermore, the user will be able to report any problem on the campus which in turn will improve navigation for other users. The continued usage of the application by the users will allow the system to create heat maps of busy location or slow moving locations thus allowing even further optimisation to the navigation experience.\newline
+Crowd-sourcing will play a pivotal role in the NavUP application user will be able to review buildings, restaurants or other services on Hatfield campuses, furthermore, the user will be able to report any problem on the campus which in turn will improve navigation for other users. The continued usage of the application by the users will allow the system to create heat maps of busy location or slow moving locations thus allowing even further optimisation to the navigation experience.\newline
 
 The user will also be rewarded for their contribution to the NavUP application and will allow the user to play treasure hunt games or travel games, further an achievement system will allow the user to show off or compare between friends their level of contribution to the application.\newline
 	\subsection{Product Perspective}
@@ -465,7 +465,7 @@ Notification will make use of the device operating system to provide push notifi
 						\end{itemize}
 				\item \textbf{Announcement Sub-System Case Diagram:}
 				\begin{figure}[H]
-					\includegraphics[width=\linewidth]{CaseDiagrams/Announcement.png}
+					\includegraphics[width=\linewidth]{CaseDiagrams/Announcements.png}
 					\caption{Announcement Sub-System Case Diagram:}
 				\end{figure}
 			\end{itemize}
@@ -525,15 +525,36 @@ Notification will make use of the device operating system to provide push notifi
 					\caption{Account Management Sub-System Case Diagram:}
 				\end{figure}
 			\end{itemize}
-		\subsubsection{CA26: Achievements}
-			\begin{itemize}
-				\item \textbf{Achievements Sub-System Case Diagram:}
-				\begin{figure}[H]
-					\includegraphics[width=\linewidth]{CaseDiagrams/Achievements.png}
-					\caption{Achievements Sub-System Case Diagram:}
-				\end{figure}
-			\end{itemize}
-		\subsubsection{CA27: Entertainment}
+	\subsection{Entertainment Sub-System}
+		\subsubsection{CA26: View Event Nearby}
+				\begin{itemize}
+				\item The user will be able to view events which are nearby the users current location
+					\item Pre-Condition
+						\begin{itemize}
+							\item User must be registered.
+							\item User must be logged in.
+							\item User must have valid location.
+						\end{itemize}
+					\item Post-Condition
+						\begin{itemize}
+							\item Returns a list of nearby events.
+						\end{itemize}
+				\end{itemize}
+		\subsubsection{CA27: View Location of Society}
+				\begin{itemize}
+				\item The user will be able to select from a list of Society and view there locations.
+					\item Pre-Condition
+						\begin{itemize}
+							\item User must be registered.
+							\item User must be logged in.
+							\item User must choose a balid Society.
+						\end{itemize}
+					\item Post-Condition
+						\begin{itemize}
+							\item Show location of Society on map
+							\item Extra option to navigate to location
+						\end{itemize}
+				\end{itemize}
 			\begin{itemize}
 				\item \textbf{Entertainment Sub-System Case Diagram:}
 				\begin{figure}[H]
@@ -565,7 +586,14 @@ Notification will make use of the device operating system to provide push notifi
 					\caption{Timetable Sub-System Case Diagram:}
 				\end{figure}
 			\end{itemize}
-
+		\subsubsection{CA29: Achievements}
+			\begin{itemize}
+				\item \textbf{Achievements Sub-System Case Diagram:}
+				\begin{figure}[H]
+					\includegraphics[width=\linewidth]{CaseDiagrams/Achievements.png}
+					\caption{Achievements Sub-System Case Diagram:}
+				\end{figure}
+			\end{itemize}
 	\subsection{Traceability Matrix}
 	\subsection{Actor-System interaction modelling}
 \end{document}
