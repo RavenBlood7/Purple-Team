@@ -18,6 +18,10 @@
 \newlist{DependenciesEnum}{enumerate}{1}
 \setlist[DependenciesEnum]{label=D-\arabic*:}
 
+\newlist{RequirementsEnum}{enumerate}{2}
+\setlist[RequirementsEnum,1]{label=R-\arabic*:}
+\setlist[RequirementsEnum,2]{label=R-\arabic{RequirementsEnumi}.\arabic*:}
+
 \graphicspath{{CaseDiagrams/}}
 
 \begin{document}
@@ -88,13 +92,13 @@ Notification will make use of the device operating system to provide push notifi
 		\subsubsection{Communications Interfaces}
 			NavUP will make use of HTTPS to communicate between device and server. Communication between devices and Wi-Fi connectors will makes user of the IEE 802.11 standard.  Furthermore, communication medium like email will be used for system announcement. The main mode of communication will be the NavUP UI.
 		\subsubsection{Memory}
-			The application will use not more than 5 MB of memory for installation and not more than 10 MB for execution. It will therefore be required for the mobile device to have secondary memory that is greater than 50 MB for optimal performance of the application. It will require a system of preferably 1 GB of memory to perform optimally. Due to the processing that the application may do it will most likely take about +- 50 Mb of the mobile devices main memory. The user profiles will be backed up on the system side to enable recovery in an event something goes wrong. The profiles will also be stored in the user’s mobile devices cache to enable faster loading of the application.
+			The application will not use more than 5 MB of memory for installation and not more than 10 MB for execution. It will therefore be required for the mobile device to have secondary memory that is greater than 50 MB for optimal performance of the application. It will require a system of preferably 1 GB of memory to perform optimally. Due to the processing that the application may do it will most likely take about +- 50 Mb of the mobile device's main memory. The user profiles will be backed up on the system side to enable recovery in an event something goes wrong. The profiles will also be stored in the user’s mobile devices cache to enable faster loading of the application.
 		%\subsubsection{Site Adaptation Requirements}
 	\subsection{Product Functions}
 	\subsection{User Characteristics}
 	\subsection{Constraints}
 		\begin{ConstraintEnum}
-			\item NavUP will have accommodate system with lesser hardware capabilities.
+			\item NavUP will have to accommodate a system with lesser hardware capabilities.
 			\item NavUP should not affect the Bandwidth usage of the University's Wi-Fi routers.
 			\item NavUP will only be functional inside the bounds of the University of Pretoria Hatfield Campus.
 			\item NavUP interface should provide accessibility improvement for those with disabilities.
@@ -116,12 +120,88 @@ Notification will make use of the device operating system to provide push notifi
 			\item The user will have their smart device connected to the campus Wi-Fi.
 		\end{DependenciesEnum}
 \section{Specific Requirements}
+	\begin{RequirementsEnum}
 	\subsection{External Interface Requirements}
-	\subsection{Functional Requirements}
+\item NavUP will be program system on the mobile phone which can be either an Android or an iOS\newline
+    Priority: Critical
+\item The user interacts with the software by means of a GUI, displayed as a map.\newline
+    Priority: Critical
+\item - The software gains its information about the WiFi location through data streaming from the internet.\newline
+    Priority: Critical	
+
+    \subsection{Functional Requirements}
+\item NavUP will be able to locate the current position of the user.\newline
+    -Preconditions:\newline
+        *an active GPS, WiFi, or Data connection\newline
+        *user must be registered and logged in \newline
+    -Postcondition: The current location of the user is returned and displayed on the map.\newline
+    - Priority: Critical
+    \begin{RequirementsEnum}
+   	 	\item This includes a location anywhere on the UP main campus map.
+   		\item This also includes the location, floor, or lecture hall within a specific building.
+    \end{RequirementsEnum}
+\item NavUP will be able to find a specified building and room when searched.
+	\begin{RequirementsEnum}
+    	\item Rooms may be lecture halls.
+	    \item Restroom should also be indicated.
+	    \item This also includes restaurants and other recreational areas.\newline
+        	-Priority: Important
+    	\item Particular campus societies could also be found.\newline
+        	-Priority: Important
+    	\item There will also be a list of special locations “near me,” which is a list of locations close to the user’s current
+    \end{RequirementsEnum} location.
+\item NavUP will give an appropriate error message if some things cannot be accomplished:
+	\begin{RequirementsEnum}
+ 	   	\item If the user cannot be found.
+        -Priority: Critical
+    	\item If there are no results for a building being searched.
+        -Priority: Critical
+		\item If connection to wifi and mobile data is lost.
+    -Priority: Important
+    \end{RequirementsEnum}     
+\item NavUP will allow a user to save a location as “favourite” and keep track of these places.\newline
+    -Priority: Medium importance
+\item NavUP will provide an option to see details about a location, whether it is the current location or a location that was searched for.\newline
+    -Priority: Medium importance
+\item NavUP will be able to generate a path based on two locations specified by the user.
+	\begin{RequirementsEnum}     
+    	\item This path will be the optimised path with regards to human traffic (congestion) and path length\newline
+	-Priority: Important.
+    	\item Several alternative paths can be generated and listed in order of what is most recommended.
+    -Priority: Important
+    \end{RequirementsEnum}     
+\item NavUP will allow a user to see how much human traffic there is on a certain route or at a certain location.\newline
+    -Priority: Medium importance
+\item NavUP will let a person manage his or her account.\newline
+	\begin{RequirementsEnum}     
+    	\item Users can create, manage or delete their profile.
+	-Priority: Critical
+    	\item A user will be able to log in and out of their account.
+    -Priority: Critical
+    \end{RequirementsEnum}  
+\item There may also be an event calendar which keeps track of events which happen in particular buildings.\newline
+    -Priority: Nice to have    
+    
 	\subsection{Performance Requirements}
+\item The ideal performance is to give real-time data streaming analysis. 
+	\begin{RequirementsEnum}	
+    	\item This means the human traffic representation must be accurate.
+	    \item The current location will be updated in short time intervals and kept relevant.
+	    \item Notifications are immediate and spread to entire user base if relevant.
+	\end{RequirementsEnum}    
+\item Details about all the buildings will be accurate.
+\item The generated path will be the optimal path with consideration for all variables.
 	\subsection{Design Constraints}
 	\subsection{Software System Attributes}
 	\subsection{Other Requirements}
+\item NavUP will keep track of the distance walked in a day.
+\item NavUP will allow users to obtain achievements, or badges, after walking a certain distance.
+\item NavUP will allow users to set personal goals.
+\item NavUP will provide the closest and safest exit in case of emergencies such as a protest action.
+\item NavUP will allow user to review and add contributions like photos to a location.
+\item NavUP will have legend filters on the map that will allow the users to see markers for food and drink vendors, computer labs, campus entrances/exits, and ATM’s.
+\item NavUP will use push notifications for urgent information such as campus closure due to disruptions* (may fall out of location constraint, such as students checking this before they leave home - remove if unnecessary)
+	\end{RequirementsEnum}
 \section{Functional Requirements}
 	\subsection{Core Navigation Sub-System}
 		\subsubsection{CA1: Get Current Location}
