@@ -32,8 +32,18 @@
 \newpage
 
 \section{Introduction}
-This document describes the Software Requirements Specification for the COS 301 Software Engineering Class project for 2017. We have been tasked to plan and create a system called NavUP. This system will serve as a guidance and basic navigation system for the 30000 people who enter the University of Pretoria every day.
+This section gives a scope description and overview of everything included in this Software Requirements Specification document. Also, the purpose of this document is described and a list of abbreviations and definitions is provided. 
+	\subsection{Purpose}
+	The purpose of this document is to describe the detailed requirements for the NavUP application which are precise and testable. It illustrates the purpose and complete declaration for the development of the application and the development methodology that will be used is agile within which the application functionality is developed iteratively. It also explains application constraints, interface and interactions to the external applications. This document is primarily intended to be proposed to a client for its approval and a reference for developing the first version of the application for the development team. 
 	\subsection{Scope}
+	The NavUP is a mobile application that uses the campus WiFi to deliver an information service to users on their smart devices. It helps students, visitors and university employees to locate venues and to determine the best route to the venues on the Hatfield Campus of the University of Pretoria depending on the user’s current location and restrictions around the location. The application should be free to download from either a mobile phone application store or similar services. The NavUP application main purpose is to provide navigation on the Hatfield Campus and will provide navigation to any other Campus or any other location outside the University of Pretoria. \newline
+	
+	University can provide information about venues, events and public services such as shops, restaurants and ablution facilities using the web-portal. This information will act as the bases for the search results displayed to the user. An administrator also uses the web portal in order to administer the application and keep the information accurate.
+\newline
+
+Furthermore, the application needs both WiFi and GPS connection to fetch and display results. All application information is maintained in a database, which is located on a web server. The application also interacts with the GPS-Navigator software which is required to be an already installed application on the user’s mobile phone. By using the GPS-Navigator, users can view desired interest points on a map and be navigated to them. The application also has the capability of providing visualised information related to pedestrian traffic, and can be trained to push new information to users according to their preferences and interests.\newline
+
+Student, staff and guest of the University of Pretoria will benefit from NavUP, since it will alleviate congestion on the Hatfield Campus and provide a medium for a more connected and informed Campus community.  
 	\subsection{Definitions, Acronyms, and Abbreviations}
 		\begin{tabular}{|p{4cm}|p{10cm}|}
 			\hline
@@ -60,8 +70,13 @@ connection and data, show locations on map and find paths from current position 
 	\subsection{References}
 		\begin{itemize}
 			\item D. Kung, Object-oriented software engineering, 1st ed. New York: McGraw-Hill, a buss unit of the McGraw-Hill Companies, 2014, pp. 80-98.
+			\item IEEE Software Engineering Standards Committee, “IEEE Std 830-1998, IEEE Recommended Practice for Software Requirements Specifications”, October 20, 1998.
 		\end{itemize}
 	\subsection{Overview}
+	The remainder of this document includes two chapters. The second chapter provides an overview of the application functionality and application interaction with other systems. This chapter also introduces different types of stakeholders and their interaction with the application. Further, the chapter also mentions the system constraints and assumptions about the product.\newline
+
+The third chapter provides the requirements specification in detailed terms and a description of the different system interfaces. Different specification techniques are used in order to specify the requirements more precisely for different audiences.
+
 \section{Overall Description}
 NavUP's main function will be to provide navigation to the user on the Hatfield Campus of the University of Pretoria. The navigation application will be accompanied with functions like, optimised route calculations based on shortest route and least congested route. NavUP will also allow the user to share location with a friend and provide navigation to a friend location on Campus.\newline
 
