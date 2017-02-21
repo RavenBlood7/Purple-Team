@@ -111,11 +111,14 @@ Notification will make use of the device operating system to provide push notifi
 			The application will not use more than 5 MB of memory for installation and not more than 10 MB for execution. It will therefore be required for the mobile device to have secondary memory that is greater than 50 MB for optimal performance of the application. It will require a system of preferably 1 GB of memory to perform optimally. Due to the processing that the application may do it will most likely take about +- 50 Mb of the mobile device's main memory. The user profiles will be backed up on the system side to enable recovery in an event something goes wrong. The profiles will also be stored in the user’s mobile devices cache to enable faster loading of the application.
 		%\subsubsection{Site Adaptation Requirements}
 	\subsection{Product Functions}
+		NavUP will be designed to provide directions from the user’s current location to the desired destination. There will be options for the route calculation based on the user’s needs; fastest route, least-congested route, and a route that best accommodates for those with disability. The system will also store information of the plentiful landmarks and points of interest that are present on campus, users will be able to view this information when visiting each one of these locations. Activities will also be integrated into the system that makes use of geolocation, activities that tracks walking data of a user and rewards them for it, as well as activities like treasure hunts that will make use of Geocaching. NavUP will provide statistical data, by storing routes and locations of users, it will facilitate heatmap displays and potentially most/least used routes. NavUP will also notify users about entertainment and social events on the UP Campus. The system should be able to deal with varying strengths of WiFi signal as there are distances between access points, in cases where signal is lost completely, NavUP will need to extrapolate from the known walks to draw the complete path the user has travelled.
 	\subsection{User Characteristics}
+		While NavUP will be mainly targeted for visitors and new students, it will have functionality to attract many more users including staff and even students that are nearing the completion of their degrees. The typical user will be a matriculant that is not familiar with the Hatfield campus, they will not necessarily be very technologically-savvy but will have the basic knowledge to work with straightforward apps that they download on their smart device. They will also be very curious about the various buildings’ histories of the campus such that they use NavUP to walk around campus and learn about the landmarks and points of interest, as well as take part in the various activities that make use of the geolocation. The other user will be more experienced with the campus, students that have been there for a longer period of time, and even the staff themselves. Some of these users will have privileges such as the day house leaders and events coordinators, they will fall under the trusted user category which will afford them administrative privileges such as event creation or even to trigger an evacuation in an emergency that may endanger student safety; such as protest action or in the case of a fire.
 	\subsection{Constraints}
 		\begin{ConstraintEnum}
 			\item NavUP will have to accommodate a system with lesser hardware capabilities.
 			\item NavUP should not affect the Bandwidth usage of the University's Wi-Fi routers.
+			\item User location may only be accessed if permissions have been given.
 			\item NavUP will only be functional inside the bounds of the University of Pretoria Hatfield Campus.
 			\item NavUP interface should provide accessibility improvement for those with disabilities.
 			\item Routes that are being calculated should always be the most optimal route.
@@ -131,9 +134,18 @@ Notification will make use of the device operating system to provide push notifi
 	\subsection{Assumptions and Dependencies}
 		\begin{AssumptionsEnum}
 			\item The user will be assumed to have a basic amount of technological literacy in operating their smart device and new applications.
+			\item The user will have a smart device capable of downloading and running applications, as well as provide location data.
+			\item The user will not know where most of the buildings are on campus.
+			\item The user will not know where the busiest and more congested areas of campus are and how to avoid them.
+			\item The user will be willing to participate in the integrated activities.
 		\end{AssumptionsEnum}
 		\begin{DependenciesEnum}
 			\item The user will have their smart device connected to the campus Wi-Fi.
+			\item The user will only be using NavUP while inside Hatfield campus.
+			\item The user must have Location services enabled.
+			\item The user must meet the minimal hardware requirements on their smart device.
+			\item The system will use GIS technologies and databases provided by the University in order to proceed with the mapping of the campus.
+			\item NavUP requires the WiFi routers on the Hatfield campus as well as knowledge of each their respective locations.
 		\end{DependenciesEnum}
 \section{Specific Requirements}
 	\begin{RequirementsEnum}
