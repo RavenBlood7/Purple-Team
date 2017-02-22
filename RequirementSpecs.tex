@@ -5,6 +5,8 @@
 \usepackage{bookmark}
 \usepackage{hyperref}
 \usepackage{enumitem}
+\usepackage[showframe=off]{geometry}
+\usepackage{changepage}
 \usepackage{float}
 
 \setlength{\parindent}{0em}
@@ -219,16 +221,6 @@ Notification will make use of the device operating system to provide push notifi
 	\end{RequirementsEnum}    
 \item Details about all the buildings will be accurate.
 \item The generated path will be the optimal path with consideration for all variables.
-	\subsection{Design Constraints}
-	\subsection{Software System Attributes}
-	\subsection{Other Requirements}
-\item NavUP will keep track of the distance walked in a day.
-\item NavUP will allow users to obtain achievements, or badges, after walking a certain distance.
-\item NavUP will allow users to set personal goals.
-\item NavUP will provide the closest and safest exit in case of emergencies such as a protest action.
-\item NavUP will allow user to review and add contributions like photos to a location.
-\item NavUP will have legend filters on the map that will allow the users to see markers for food and drink vendors, computer labs, campus entrances/exits, and ATM’s.
-\item NavUP will use push notifications for urgent information such as campus closure due to disruptions* (may fall out of location constraint, such as students checking this before they leave home - remove if unnecessary)
 	\end{RequirementsEnum}
 \section{Functional Requirements}
 	\subsection{Core Navigation Sub-System}
@@ -703,5 +695,60 @@ Notification will make use of the device operating system to provide push notifi
 				\end{figure}
 			\end{itemize}
 	\subsection{Traceability Matrix}
+			\begin{table}[h!]
+				\centering
+				\caption{Core Systems Traceability Matrix}
+				\label{my-label}
+				\begin{tabular}{cc|c|c|c|c|c|c|c|c|c|}
+					\cline{3-11}
+					                                           &                   & \multicolumn{9}{c|}{\textbf{Use Cases}} 				     \\ \hline
+					\multicolumn{1}{|c|}{\textbf{Requirement}} & \textbf{Priority} & CA1 & CA2  & CA3  & CA4  & CA5  & CA6 & CA7 & CA8 & CA9      \\ \hline
+					\multicolumn{1}{|c|}{R-1}                 & 1                 & X    &      &      &      &     &   &  &   &   				  \\ \hline
+					\multicolumn{1}{|c|}{R-2}                 & 2                 & X    &      & X    & X    & X   &   &  &   &   				   \\ \hline
+					\multicolumn{1}{|c|}{R-3}                 & 4                 &      & X    & X    &      &     &   &  &   &     				\\ \hline
+					\multicolumn{1}{|c|}{R-4}                 & 3                 & X    &      &      & X    & X   &   &  &   & X     				\\ \hline
+					\multicolumn{1}{|c|}{R-5}                 & 5                 & X    & X    &      & X    & X   & X & X&   &    				\\ \hline
+					\multicolumn{1}{|c|}{R-6}                 & 7                 &      &      &      &      &     &   &  & X &    				\\ \hline
+					\multicolumn{1}{|c|}{R-7}                 & 8                 &      & X    &      &      &     &   &  & X &     				\\ \hline
+					\multicolumn{1}{|c|}{R-8}                 & 9                 & X    & X    &      &      &     &   &  &   &     				\\ \hline
+					\multicolumn{1}{|c|}{R-9}                 & 3                 & X    & X    &      &      &     &   &  &   &     				\\ \hline
+					\multicolumn{1}{|c|}{R-10}                 & 6                 &     & X    &      &      &     &   &  &   &    				\\ \hline
+					\multicolumn{1}{|c|}{R-11}                 & 7                 &     &      &      &      &     & X &  &   &     				\\ \hline
+					\multicolumn{1}{|c|}{R-12}                 & 9                 &     &      &      &      &     &   &  &   &     				\\ \hline
+					\multicolumn{1}{|c|}{R-13}                 & 4                 &     &      & X    &      &     &   &  &   &      				\\ \hline
+					\multicolumn{1}{|c|}{R-14}                 & 8                 &     &      & X    &      &     &   &  &   &      				\\ \hline
+					\multicolumn{1}{|c|}{R-15}                 & 5                 &     &      & X    &      &     &   &  &   &     				\\ \hline
+					\multicolumn{2}{|c|}{\textbf{Use Case Priority}}               & 1    & 2    & 3    & 6    & 4    & 5 & 4 & 7  & 7			    \\ \hline
+				\end{tabular}
+			\end{table}
+
+			\begin{table}[]
+				\centering
+				\caption{Secondary Systems Traceability Matrix}
+				\label{my-label}
+				\begin{adjustwidth}{-2cm}{}
+					\begin{tabular}{cc|c|c|c|c|c|c|c|c|c|}
+						\cline{3-11}
+						                                           &                   & \multicolumn{9}{c|}{\textbf{Use Cases}} 				     		  \\ \hline
+						\multicolumn{1}{|c|}{\textbf{Requirement}} & \textbf{Priority} & CA10 & CA11  & CA12  & CA13  & CA14  & CA15 & CA16 & CA17 & CA18      \\ \hline
+						\multicolumn{1}{|c|}{R-1}                 & 1                 &      &     &     &      &     &   &   &   &   				  			\\ \hline
+						\multicolumn{1}{|c|}{R-2}                 & 2                 &      &     &     &      &     &   &   &   & X  				   			\\ \hline
+						\multicolumn{1}{|c|}{R-3}                 & 4                 &      &     &     &      &     &   &   &   &     						\\ \hline
+						\multicolumn{1}{|c|}{R-4}                 & 3                 &      & X   & X   &      &     &   &   &   &      						\\ \hline
+						\multicolumn{1}{|c|}{R-5}                 & 5                 &      &     &     & X    &     &   &   &   &    						    \\ \hline
+						\multicolumn{1}{|c|}{R-6}                 & 7                 & X    & X   & X   &      &     &   &   &   &    						    \\ \hline
+						\multicolumn{1}{|c|}{R-7}                 & 8                 &      &     &     &      & X   & X &   &   &     						\\ \hline
+						\multicolumn{1}{|c|}{R-8}                 & 9                 &      &     & X   &      & X   & X &   &   &     						\\ \hline
+						\multicolumn{1}{|c|}{R-9}                 & 3                 & X    &     & X   & X    &     &   &   &   &     						\\ \hline
+						\multicolumn{1}{|c|}{R-10}                 & 6                 &     &     &     &      &     &   &   &   &    						    \\ \hline
+						\multicolumn{1}{|c|}{R-11}                 & 7                 &     &     &     &      &     &   & X &   &     						\\ \hline
+						\multicolumn{1}{|c|}{R-12}                 & 9                 &     &     &     & X    &     &   &   &   &     						\\ \hline
+						\multicolumn{1}{|c|}{R-13}                 & 4                 &     &     &     &      &     &   &   & X & X      						\\ \hline
+						\multicolumn{1}{|c|}{R-14}                 & 8                 &     &     & X   &      & X   & X &   & X & X     						\\ \hline
+						\multicolumn{1}{|c|}{R-15}                 & 5                 &     &     & X   &      &     &   &   &   &     						\\ \hline
+						\multicolumn{2}{|c|}{\textbf{Use Case Priority}}               & 4    & 2    & 2    & 1    & 6    & 5 & 3 & 4  & 5						\\ \hline
+					\end{tabular}
+				\end{adjustwidth}
+			\end{table}
 	\subsection{Actor-System interaction modelling}
 \end{document}
