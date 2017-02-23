@@ -5,7 +5,6 @@
 \usepackage{bookmark}
 \usepackage{hyperref}
 \usepackage{enumitem}
-\usepackage[showframe=off]{geometry}
 \usepackage{changepage}
 \usepackage{float}
 
@@ -694,6 +693,7 @@ Notification will make use of the device operating system to provide push notifi
 					\caption{Achievements Sub-System Case Diagram:}
 				\end{figure}
 			\end{itemize}
+		\newpage
 	\subsection{Traceability Matrix}
 			\begin{table}[h!]
 				\centering
@@ -750,5 +750,107 @@ Notification will make use of the device operating system to provide push notifi
 					\end{tabular}
 				\end{adjustwidth}
 			\end{table}
+			\newpage
 	\subsection{Actor-System interaction modelling}
+		\subsubsection {Save my location}
+		\begin{tabular}{|p{7cm}|p{7cm}|}
+			\hline
+			\textbf{Actor: User} & \textbf{System: NavUP}\\
+			\hline
+			 & 0. Display user’s current location\\
+			\hline
+			1. User clicks on Save my location & 2.  System asks the user to confirm if they want to save the location  \\
+			\hline
+			3  User clicks on confirm button. & 4. System saves current location under the user’s name in the database. \\
+			\hline
+			&  5. System displays that the location has been successfully saved\\
+			\hline
+		\end{tabular}
+		\subsubsection {View saved location}
+		\begin{tabular}{|p{7cm}|p{7cm}|}
+			\hline
+			\textbf{Actor: User} & \textbf{System: NavUP}\\
+			\hline
+			 & 0. Display user’s current location\\
+			\hline
+			1. The user clicks on view saved location & 2.   System displays a list of saved locations \\
+			\hline
+			
+		\end{tabular}
+		\subsubsection {Get current location}
+		\begin{tabular}{|p{7cm}|p{7cm}|}
+			\hline
+			\textbf{Actor: User} & \textbf{System: NavUP}\\
+			\hline
+			 & 0. Display campus map\\
+			\hline
+			1. Connect to campus wifi & 2.  Based on signal strength to each wifi router, triangulate the user position \\
+			\hline
+		\end{tabular}
+		\subsubsection {Get direction to location}
+		\begin{tabular}{|p{7cm}|p{7cm}|}
+			\hline
+			\textbf{Actor: User} & \textbf{System: NavUP}\\
+			\hline
+			 & 0. Show destination location\\
+			\hline
+			1. Click on navigate to location & 2.   Calculate fastest paths to destination from current location  \\
+			\hline
+			& 3. Display the fastest paths in a list from fastest to slowest \\
+			\hline
+			4. Click on path that they want to travel &  5. Start navigating to the destination by following the path that the user selected.\\
+			\hline
+		\end{tabular}
+		\subsubsection {Search for location}
+		\begin{tabular}{|p{7cm}|p{7cm}|}
+			\hline
+			\textbf{Actor: User} & \textbf{System: NavUP}\\
+			\hline
+			 & 0. Display campus map\\
+			\hline
+			1.Search for the location name in the search bar, that they want to travel to or see more details about. &  \\
+			\hline
+			2. Select the desired location from a list of matches & 3. Display the location and information about it and give the user the option to navigate to the location \\
+			\hline
+		\end{tabular}
+		\subsubsection {View location detail}
+		\begin{tabular}{|p{7cm}|p{7cm}|}
+			\hline
+			\textbf{Actor: User} & \textbf{System: NavUP}\\
+			\hline
+			 & 0. Display campus map\\
+			\hline
+			1. Scroll to a location on the map that they want to see more details about &  \\
+			\hline
+			2.Select the desired location & 3. Display information about the desired location\\
+			\hline
+		\end{tabular}
+		\subsubsection {Report a problem}
+		\begin{tabular}{|p{7cm}|p{7cm}|}
+			\hline
+			\textbf{Actor: User} & \textbf{System: NavUP}\\
+			\hline
+			 & 0. Display user’s current location\\
+			\hline
+			1. Click on “Report a problem” & 2. Display problem reporting form \\
+			\hline
+			3. Fill out form describing the problem, selecting the location and then clicking save to submit the problem & 4. Indicate the problem on the map and display a description of the problem\\
+			\hline
+		\end{tabular}
+		\subsubsection {View heatmap}
+		\begin{tabular}{|p{7cm}|p{7cm}|}
+			\hline
+			\textbf{Actor: User} & \textbf{System: NavUP}\\
+			\hline
+			 & 0. Display user’s current location\\
+			\hline
+			1. Click on view heatmap & 2. Calculate how many people there are at a location based on how much traffic there is on a specific wifi router. \\
+			\hline
+			 & 3. Combine all the data calculated and create a map indicating where the most traffic is.\\
+			\hline
+			& 4. Display the heatmap to the user\\
+			\hline
+		\end{tabular}
+
+
 \end{document}
